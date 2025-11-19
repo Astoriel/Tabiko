@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tabiko</title>
+  <link rel="stylesheet" type="text/css" href="sidepanel.css">
+</head>
+<body>
+  
+  <div class="top-controls">
+    <div class="branding">
+        <img src="icons/icon567.png" class="app-logo" alt="Logo">
+        <span class="app-name">tabiko</span>
+    </div>
+    
+    <div class="top-actions">
+      <button id="save-window-btn" class="icon-btn" title="Save Current Window as Workspace">⊞</button>
+      <button id="import-btn" class="icon-btn" title="Import">v</button>
+      <button id="export-btn" class="icon-btn" title="Export">^</button>
+    </div>
+  </div>
+
+  <div class="add-workspace-container">
+    <input type="text" id="new-workspace-name" placeholder="Name..." style="display: none;">
+    <button id="add-workspace-btn" class="big-plus-btn" title="Create Workspace">+</button>
+  </div>
+
+  <div class="search-container" id="search-container">
+    <input type="search" id="search-input" placeholder="Search tabs...">
+  </div>
+  
+  <div id="empty-state-message" style="display: none;">
+      <p class="empty-text">Add ur first workspace ⸜(｡˃ ᵕ ˂ )⸝♡</p>
+      <img src="icons/tabiko.png" class="empty-image" alt="Tabiko">
+  </div>
+  
+  <input type="file" id="file-input" accept=".md,.txt" style="display: none;">
+
+  <div id="workspaces-list-container"></div>
+
+  <script src="sortable.min.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
