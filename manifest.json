@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Tabiko (vibe version v2.2)",
+  "version": "2.2",
+  "description": "Drag links directly into workspaces.",
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "sidePanel",
+    "favicon",
+    "tabs" 
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open Tabiko"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

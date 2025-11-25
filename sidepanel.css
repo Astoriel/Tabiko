@@ -1,0 +1,119 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 12px;
+  background-color: #f8f9fa;
+  margin: 0;
+  user-select: none;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+/* --- 1. HEADER --- */
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 15px; /* Уменьшил отступ снизу */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.branding { display: flex; align-items: center; gap: 12px; }
+.app-logo { width: 50px; height: 50px; object-fit: contain; }
+.app-name { font-size: 20px; font-weight: 400; color: #444; letter-spacing: 0.5px; }
+
+.top-actions { display: flex; gap: 8px; }
+
+/* ОБНОВЛЕННЫЙ СТИЛЬ КНОПОК В ШАПКЕ */
+.icon-btn {
+  width: 30px; height: 30px; /* Чуть-чуть больше */
+  border-radius: 50%;
+  border: 1px solid #d0d7de; /* Более заметная рамка */
+  background-color: #f6f8fa; /* Цвет фона кнопки */
+  color: #444;
+  font-family: monospace; font-size: 14px; font-weight: bold;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s ease-in-out;
+  padding-bottom: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Легкая тень для объема */
+}
+
+/* Ховер эффекты остаются прежними, они перекроют базовый стиль */
+#import-btn:hover { color: #28a745; border-color: #28a745; background-color: #fff; box-shadow: none;}
+#export-btn:hover { color: #007bff; border-color: #007bff; background-color: #fff; box-shadow: none;}
+#save-window-btn:hover { color: #6f42c1; border-color: #6f42c1; background-color: #fff; box-shadow: none;} /* Фиолетовый для новой кнопки */
+
+
+/* --- 2. ADD WORKSPACE (Теперь выше поиска) --- */
+.add-workspace-container {
+    display: flex; justify-content: center; align-items: center;
+    margin-bottom: 15px; /* Отступ до поиска */
+    gap: 10px; height: 40px;
+    transition: all 0.3s ease;
+}
+.big-plus-btn {
+    width: 44px; height: 44px; border-radius: 50%;
+    background-color: #007bff; color: white; border: none;
+    font-size: 26px; line-height: 1; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    padding-bottom: 4px; box-shadow: 0 4px 10px rgba(0,123,255,0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.big-plus-btn:hover { background-color: #0056b3; transform: scale(1.05); }
+.big-plus-btn:active { transform: scale(0.95); }
+
+#new-workspace-name {
+    width: 140px; padding: 8px; border: 1px solid #ccc;
+    border-radius: 4px; outline: none; font-size: 14px;
+    animation: slideIn 0.2s ease;
+}
+@keyframes slideIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+
+/* --- 3. SEARCH (Теперь ниже кнопки добавления) --- */
+.search-container { margin-bottom: 20px; } /* Отступ до списка */
+#search-input {
+  width: 100%; padding: 10px 12px; border: 1px solid #ddd;
+  border-radius: 8px; box-sizing: border-box; outline: none;
+  font-size: 14px; background-color: #fff;
+}
+#search-input:focus { border-color: #007bff; box-shadow: 0 0 0 3px rgba(0,123,255,0.1); }
+
+
+/* --- 4. EMPTY STATE & REMAINDER --- */
+/* ... (Весь остальной CSS без изменений) ... */
+#empty-state-message { text-align: center; margin-top: 10px; animation: fadeIn 0.5s ease; }
+.empty-text { font-size: 14px; font-weight: 300; color: #888; margin-bottom: 15px; transition: font-size 0.3s; }
+.empty-image { max-width: 150px; height: auto; opacity: 0.9; transition: all 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.workspace-container { display: block; margin-bottom: 15px; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #eee; overflow: hidden; }
+.workspace-header-container { display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; padding: 10px 14px; border-bottom: 1px solid #f0f0f0; cursor: context-menu; }
+.workspace-header-container:hover { background-color: #f8f9fa; }
+.workspace-header { font-size: 14px; font-weight: 700; color: #444; margin: 0; pointer-events: none; }
+.delete-workspace-icon { cursor: pointer; color: #ff8787; font-size: 16px; font-weight: bold; padding: 2px 6px; border-radius: 4px; line-height: 1; }
+.delete-workspace-icon:hover { background-color: #ffe3e3; color: #c92a2a; }
+ul.workspace-tabs-list { list-style-type: none; padding: 0; margin: 0; min-height: 30px; }
+ul.workspace-tabs-list.drag-hover { background-color: #e7f5ff; }
+li.list-item { display: flex; flex-direction: column; padding: 10px 14px; border-bottom: 1px solid #f5f5f5; background: white; cursor: grab; }
+li.list-item.context-selected { background-color: #fff3bf !important; border-left: 3px solid #fcc419; padding-left: 11px; }
+li.list-item:hover { background-color: #fafafa; }
+.link-wrapper { display: flex; align-items: center; width: 100%; overflow: hidden; }
+.link-favicon { width: 16px; height: 16px; margin-right: 8px; flex-shrink: 0; }
+li a { text-decoration: none; color: #333; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; flex-grow: 1; }
+.notes-container { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.note-chip { background-color: #fff9db; border: 1px solid #fff3bf; padding: 2px 8px; font-size: 11px; color: #666; border-radius: 10px; display: flex; align-items: center; gap: 6px; }
+.delete-note-btn { cursor: pointer; color: #adb5bd; font-weight: bold; font-size: 12px; }
+.delete-note-btn:hover { color: #f03e3e; }
+#custom-context-menu { display: none; position: fixed; background-color: #fff; border: 1px solid #ccc; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; min-width: 160px; border-radius: 6px; padding: 4px 0; }
+.menu-item { padding: 8px 16px; cursor: pointer; font-size: 13px; color: #333; }
+.menu-item:hover { background-color: #f1f3f5; }
+.menu-separator { height: 1px; background-color: #eee; margin: 4px 0; }
+
+/* IS-EMPTY STATE */
+body.is-empty .add-workspace-container { height: 120px; margin-top: 40px; }
+body.is-empty .big-plus-btn { width: 100px; height: 100px; font-size: 60px; box-shadow: 0 10px 25px rgba(0,123,255,0.4); }
+body.is-empty .big-plus-btn:hover { transform: scale(1.1) rotate(90deg); }
+body.is-empty .empty-text { font-size: 18px; margin-bottom: 30px; color: #555; }
+body.is-empty .empty-image { max-width: 450px; width: 90%; margin-top: 20px; }
