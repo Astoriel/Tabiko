@@ -190,6 +190,13 @@ document.addEventListener('DOMContentLoaded', () => {
     li.dataset.workspaceName = workspaceName;
     li.dataset.tabId = item.id; 
 
+    li.addEventListener('dblclick', (e) => {
+        // Проверка, чтобы не срабатывало при удалении заметок
+        if (e.target.classList.contains('delete-note-btn')) return;
+        
+        // Открываем ссылку в новой активной вкладке
+        chrome.tabs.create({ url: item.url, active: true });
+      
     const titleDiv = document.createElement('div');
     titleDiv.className = 'link-wrapper';
 
