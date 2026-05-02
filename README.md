@@ -12,6 +12,10 @@ no more chaotic browser windows, just zen. ₍^. .^₎⟆
 
 ---
 
+## project status
+
+maintenance mode. Snapshot date: 2026-03-19. see [STATUS.md](STATUS.md) and [KNOWN_LIMITATIONS.md](KNOWN_LIMITATIONS.md) for what works today and what is planned.
+
 ### features ˚ ༘♡ ⋆｡˚
 
 <details>
